@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书管理系统</title>
+    <link rel="stylesheet" href="login-page.css" type="text/css">
+</head>
+<body>
+<div class="whole_page">
+    <div class="login_box">
+        <img src="../images/login.png">
+        <ul class="login_ul">
+            <!--username-->
+            <li>
+                <div class="login_username">
+                    <label for="username">用户名 </label>
+                    <input type="text" id="username" placeholder="username">
+                </div>
+            </li>
+            <!--password-->
+            <li>
+                <div class="login_password">
+                    <label for="password">密&nbsp;&nbsp;&nbsp;码</label>
+                    <input type="text" id="password" placeholder="password" style="margin-left: 0.2rem">
+                </div>
+            </li>
+            <!--remember password-->
+            <li>
+                <div class="Remember_password_container">
+                    <input type="checkbox" id="remember_password_checkbox">
+                    <label for="remember_password_checkbox">Remember me</label>
+                </div>
+            </li>
+            <!--check code-->
+            <li>
+                <div class="check_code_container">
+                    <div class="check_code_container_outsider">
+                        <label for="check_code">验证码 </label>
+                        <input class="check_code" id="check_code" type="text">
+                        <div class="check_code_generator" id="check_code_generator"></div>
+                        <div id="change-check-code" class="change-check-code">换一张</div>
+                    </div>
+                </div>
+            </li>
+            <!--type-->
+            <li>
+                <div class="user_type">
+                    <ul>
+                        <li>
+                            <input type="radio" name="user_type" class="radio" id="user_admin">
+                            <label for="user_admin">管理员</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="user_type" class="radio" id="user_teacher">
+                            <label for="user_teacher">教师</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="user_type" class="radio" id="user_student">
+                            <label for="user_student">学生</label>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <!--submit-->
+                <div class="login_login">
+                    <input class="login" id="login" type="button" value="登录">
+                    <input class="register" id="register" type="button" value="注册">
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/login.js"></script>
+</body>
+</html>
