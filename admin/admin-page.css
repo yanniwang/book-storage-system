@@ -23,16 +23,14 @@ pre, form, fieldset, table, th, td {
 
 .page-container h2 {
     text-align: center;
-    margin-top: 3.5rem;
+    margin-top: 1.5rem;
     color: dodgerblue;
 }
 
 .admin-table {
-    position: absolute;
     height: 30rem;
     width: 80%;
-    left: 10%;
-    top: calc(50% - 13rem);
+    margin-left: 10%;
     background-color: white;
     overflow: auto;
 }
