@@ -1,53 +1,40 @@
-var ip = '47.98.42.85:9999';
-var register_student = '';
+var ip = 'http://47.98.42.85:9099';
+var register_student = '/bookOrdering/user/register';
 if (window.location.hostname === '' || window.location.hostname === 'localhost') {
     register_student = ip + register_student;
 }
 
-$(document).ready(function () {
-    var register_username = $('#register_username').val();
-    var register_password = $('#register_password').val();
-    var repeat_register_password = $('#repeat_register_password').val();
-    var teacher_name = $('#teacher-name').val();
-    var grade = $('#grade').val();
-    var collage = $('#collage').val();
-    var student_class = $('#class').val();
-    var param = {};
-
-    param['username'] = register_username;
-    param['password'] = register_password;
-    param['teacher_name'] = teacher_name;
-    param['grade'] = grade;
-    param['collage'] = collage;
-    param['class'] = student_class;
-    param['roleId'] = '2';
-
+$(function () {
     $('#register').click(function () {
-        if (!!register_username && !!register_password && !!repeat_register_password && !!teacher_name && !!grade && !!collage && !!student_class) {
-            if (register_password !== repeat_register_password) {
-                alert('两次输入密码不一致');
-                $('#register_username').val('');
-                $('#repeat_register_password').val('');
-            } else {
-                $.ajax({
-                    url: register_url,
-                    type: 'POST',
-                    dataType: 'json',
-                    data: JSON.stringify({
-                        param
-                    }),
-                    success: function (result) {
-                        if (!!result && result.result === 'success') {
-                            console.log(result);
-
-                        } else {
-                            alert(result['message']);
-                        }
+        if ($.trim($('#register_password').val()) === $.trim($('#repeat_register_password').val())) {
+            $.ajax({
+                url: register_student,
+                type: 'POST',
+                dataType: 'json',
+                data: JSON.stringify({
+                    "userId": $('#register_userId').val(),
+                    "teacherId": $('#teacher_userId').val(),
+                    "userName": $('#register_username').val(),
+                    "password": $('#register_password').val(),
+                    "grade": $('#grade').val(),
+                    "collage": $('#collage').val(),
+                    "clase": $('#class').val(),
+                    "roleId": "2",
+                    "state": "0"
+                }),
+                contentType: 'application/json; charset=UTF-8',
+                success: function (result) {
+                    console.log(result)
+                    if (!!result && result.data === '成功添加用户') {
+                        window.location.href = '../register/register-success.html';
+                    } else {
+                        alert(result['data']);
                     }
-                })
-            }
+                }
+            })
+        } else {
+            alert('两次输入密码不一致');
+            $('#repeat_register_password').val('');
         }
     })
-
-
 });

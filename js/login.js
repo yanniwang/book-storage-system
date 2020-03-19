@@ -1,5 +1,5 @@
-var ip = '47.98.42.85:9999';
-var login_url = 'bookOrdering/login';
+var ip = 'http://47.98.42.85:9099';
+var login_url = '/bookOrdering/user/login';
 if (window.location.hostname === '' || window.location.hostname === 'localhost') {
     login_url = ip + login_url;
 }
@@ -15,7 +15,7 @@ function GenerateCheckCode() {
     document.getElementById('check_code_generator').innerHTML = code;
 }
 
-$(document).ready(function () {
+$(function () {
     //一进入页面生成验证码
     GenerateCheckCode();
 
@@ -42,82 +42,40 @@ $(document).ready(function () {
 
     //login
     $("#login").click(function () {
-        console.log(111)
         //获取验证码输入值
         let check_code = $('#check_code');
-
-        let username = $('#username').val();
-        let password = $('#password').val();
-        let param = {};
-        param['userId'] = username;
-        param['password'] = password;
-
         //获取验证码产生值
         let check_code_generator = $('#check_code_generator');
-        if (check_code[0].value.toLocaleLowerCase() === check_code_generator[0].innerText.toLocaleLowerCase()) {
-            if ($('input:checked').attr('id') === 'user_admin') {
-                $.ajax({
-                    url: login_url,
-                    type: 'POST',
-                    dataType: 'json',
-                    data: JSON.stringify({
-                        param
-                    }),
-                    success: function (result) {
-                        console.log(result);
-                        if (!!result && result.result === 'success') {
-                            //存入session中
-                            window.sessionStorage.setItem("bookStorage.token", result['item']['token']);
-                            window.location.href = '../admin/admin-page.html';
-                        } else {
-                            alert(result['message']);
-                        }
-                    }
-                })
-            } else if ($('input:checked').attr('id') === 'user_teacher') {
-                $.ajax({
-                    url: login_url,
-                    type: 'post',
-                    dataType: 'json',
-                    data: JSON.stringify({
-                        param
-                    }),
-                    success: function (result) {
-                        if (!!result && result.result === 'success') {
-                            //存入session中
-                            window.sessionStorage.setItem("bookStorage.token", result['item']['token']);
-                            window.location.href = '../admin/admin-page.html';
-                        } else {
-                            alert(result['message']);
-                        }
-                    }
-                })
-            } else if ($('input:checked').attr('id') === 'user_student') {
-                $.ajax({
-                    url: login_url,
-                    type: 'POST',
-                    dataType: 'json',
-                    data: JSON.stringify({
-                        param
-                    }),
-                    success: function (result) {
-                        if (!!result && result.result === 'success') {
-                            //存入session中
-                            window.sessionStorage.setItem("bookStorage.token", result['item']['token']);
-                            window.location.href = '../admin/admin-page.html';
-                        } else {
-                            alert(result['message']);
-                        }
-                    }
-                })
-            }
 
-            // if ($("#user_admin").attr('checked', 2)) {
-            //     window.open('../admin/admin-page.html');
-            // }
+        if (check_code[0].value.toLocaleLowerCase() !== check_code_generator[0].innerText.toLocaleLowerCase()) {
+            alert('验证码错误');
+        } else {
+            $.ajax({
+                url: login_url,
+                dataType: 'json',
+                type: 'POST',
+                data: JSON.stringify({
+                    "userId": $('#username').val(),
+                    "password": $('#password').val()
+                }),
+                contentType: 'application/json; charset=UTF-8',
+                success: function (result) {
+                    if (!!result) {
+                        // console.log(result.data);
+                        window.sessionStorage.setItem("token", result['data']);
+
+                        if ($("#user_teacher:checked").val() === 'on') {
+                            window.location.href = '../teacher/teacher-page.html';
+                        } else if ($('#user_admin:checked').val() === 'on') {
+                            window.location.href = '../admin/admin-page.html';
+                        } else if ($('#user_student:checked').val() === 'on') {
+                            window.location.href = '../student/student-page.html';
+                        }
+                    }
+                }
+            });
         }
     });
-
 
     //register
     $("#register").click(function () {
@@ -129,4 +87,5 @@ $(document).ready(function () {
             alert('请选择角色');
         }
     });
+
 });
