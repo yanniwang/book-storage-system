@@ -23,10 +23,10 @@ pre, form, fieldset, table, th, td {
 
 .register_box {
     position: absolute;
-    height: 32rem;
+    height: 36rem;
     width: 80%;
     left: 10%;
-    top: calc(50% - 16rem);
+    top: calc(50% - 18rem);
     background-color: white;
 }
 
