@@ -8,71 +8,65 @@
 <body>
 <div class="page-container">
     <h2>工作人员</h2>
+    <button style="margin-left: 86%;" id="add">增添</button>
     <div class="admin-table">
         <table class="admin-tb" cellspacing="0" cellpadding="0" id="admin-tb">
+            <thead>
             <tr>
                 <th>序列号</th>
                 <th>书名</th>
-                <th>数量</th>
+                <th>价格</th>
+                <th>总数量</th>
+                <th>剩余数量</th>
                 <th>订单详情</th>
-                <th>操作</th>
+                <th colspan="3">操作</th>
             </tr>
-            <tr>
-                <td>Item 1A</td>
-                <td>Item 1B</td>
-                <td>Item 1C</td>
-                <td>
-                    <input class="check_btn" type="button" value="查看">
-                </td>
-                <td class="operate_btn">
-                    <input type="button" value="修改">
-                    <input type="button" value="删除">
-                    <input type="button" value="增加">
-                </td>
-            </tr>
-            <tr>
-                <td>Item 2A</td>
-                <td>Item 2B</td>
-                <td>Item 2C</td>
-                <td>
-                    <input class="check_btn" type="button" value="查看">
-                </td>
-                <td class="operate_btn">
-                    <input type="button" value="修改">
-                    <input type="button" value="删除">
-                    <input type="button" value="增加">
-                </td>
-            </tr>
-            <tr>
-                <td>Item 3A</td>
-                <td>Item 3B</td>
-                <td>Item 3C</td>
-                <td>
-                    <input class="check_btn" type="button" value="查看">
-                </td>
-                <td class="operate_btn">
-                    <input type="button" value="修改">
-                    <input type="button" value="删除">
-                    <input type="button" value="增加">
-                </td>
-            </tr>
-            <tr>
-                <td>Item 4A</td>
-                <td>Item 4B</td>
-                <td>Item 4C</td>
-                <td>
-                    <input class="check_btn" type="button" value="查看">
-                </td>
-                <td class="operate_btn">
-                    <input type="button" value="修改">
-                    <input type="button" value="删除">
-                    <input type="button" value="增加">
-                </td>
-            </tr>
+            </thead>
+
+            <tbody></tbody>
         </table>
     </div>
+
+    <div class="update">
+        <ul style="width: 100%; height: 100%">
+            <li>
+                <input type="text"
+                       style="height: 2rem; width: 80%; margin-left: 10%; margin-top: 8%;margin-bottom: 3%"
+                       id="update_indexId" placeholder="请输入序列号">
+            </li>
+            <li>
+                <input type="text" style="height: 2rem; width: 80%; margin-left: 10%;margin-bottom: 3%"
+                       id="update_book_name" placeholder="请输入书名">
+            </li>
+            <li>
+                <input type="text" style="height: 2rem; width: 80%; margin-left: 10%;margin-bottom: 3%"
+                       id="update_author" placeholder="请输入作者">
+            </li>
+            <li>
+                <input type="text" style="height: 2rem; width: 80%; margin-left: 10%;margin-bottom: 3%"
+                       id="update_synopsis" placeholder="请输入概要">
+            </li>
+            <li>
+                <input type="text" style="height: 2rem; width: 80%; margin-left: 10%;margin-bottom: 3%"
+                       id="update_price" placeholder="请输入书本价格">
+            </li>
+            <li>
+                <input type="text" style="height: 2rem; width: 80%; margin-left: 10%;margin-bottom: 3%"
+                       id="update_total" placeholder="请输入书本总量">
+            </li>
+            <li>
+                <input type="text" style="height: 2rem; width: 80%; margin-left: 10%;margin-bottom: 3%"
+                       id="update_remainder" placeholder="请输入书本剩余量">
+            </li>
+            <li>
+                <input type="button"
+                       style="height: 2rem; width: 80%; margin-left: 10%;margin-bottom: 5%; background-color: #00c1de; border: none; outline: none"
+                       value="提交修改" id="update_submit">
+            </li>
+        </ul>
+    </div>
 </div>
-<script src="../js/jquery-3.4.1.min.js"></script>
+<script src="../js/jquery-3.4.1.js"></script>
 <script src="../js/admin.js"></script>
 </body>
 </html>

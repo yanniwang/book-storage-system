@@ -28,9 +28,10 @@ pre, form, fieldset, table, th, td {
 }
 
 .admin-table {
-    height: 30rem;
+    height: 70%;
     width: 80%;
     margin-left: 10%;
+    margin-top: 2%;
     background-color: white;
     overflow: auto;
 }
@@ -39,21 +40,14 @@ pre, form, fieldset, table, th, td {
     width: 90%;
     height: 90%;
     margin-left: 5%;
-    margin-top: 2.5%;
+    margin-top: 1.6%;
     border: 0.05rem solid grey;
+    overflow: auto;
 }
 
 .admin-tb tr th, td {
     text-align: center;
     border: 0.05rem solid grey;
-}
-
-.check_btn {
-    background-color: #00c1de;
-    outline: none;
-    border-radius: 0.4rem;
-    border: 0;
-    cursor: pointer;
 }
 
 .operate_btn input:nth-child(1) {
@@ -78,4 +72,15 @@ pre, form, fieldset, table, th, td {
     border-radius: 0.4rem;
     border: 0;
     cursor: pointer;
+}
+
+.update {
+    position: absolute;
+    background-color: #ededed;
+    width: 30%;
+    height: 52%;
+    top: 14.2%;
+    left: 35%;
+    opacity: 0.9;
+    display: none;
 }
