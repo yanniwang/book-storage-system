@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单</title>
+    <style type="text/css">
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            width: 100%;
+            height: 100%;
+        }
+
+        div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,
+        pre, form, fieldset, table, th, td {
+            border: none;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .page-container {
+            width: 100%;
+            height: 100%;
+            background-color: #F5F5F6;
+            position: absolute;
+        }
+
+        .register_box {
+            position: absolute;
+            height: 100%;
+            width: 80%;
+            left: 10%;
+            top: 5%;
+            background-color: white;
+        }
+
+        .page-container h2 {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: dodgerblue;
+        }
+
+        table {
+            width: 90%;
+            height: 70%;
+            margin-left: 5%;
+            margin-top: 1.6%;
+            border: 0.05rem solid grey;
+            overflow: auto;
+        }
+
+        table tr th, td {
+            text-align: center;
+            border: 0.05rem solid grey;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="page-container">
+    <div class="register_box">
+        <h2>订单</h2>
+        <table cellspacing="0" cellpadding="0">
+            <thead>
+            <tr>
+                <th>购买单位</th>
+                <th>购买数量</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>计算机与通信工程学院计算机专业</td>
+                <td>160</td>
+                <td><input type="button" value="确定订购"
+                           style="background-color: #00c1de; border: none; outline: none; border-radius: 4px; cursor: pointer">
+                </td>
+            </tr>
+            <tr>
+                <td>计算机与通信工程学院软件工程专业</td>
+                <td>88</td>
+                <td><input type="button" value="确定订购"
+                           style="background-color: #00c1de; border: none; outline: none; border-radius: 4px; cursor: pointer">
+                </td>
+            </tr>
+            <tr>
+                <td>信息管理学院信息专业</td>
+                <td>67</td>
+                <td><input type="button" value="确定订购"
+                           style="background-color: #00c1de; border: none; outline: none; border-radius: 4px; cursor: pointer">
+                </td>
+            </tr>
+            <tr>
+                <td>电路与理论学专业</td>
+                <td>67</td>
+                <td><input type="button" value="确定订购"
+                           style="background-color: #00c1de; border: none; outline: none; border-radius: 4px; cursor: pointer">
+                </td>
+            </tr>
+            <tr>
+                <td>计算机与通信工程学院通信工程专业</td>
+                <td>121</td>
+                <td><input type="button" value="确定订购"
+                           style="background-color: #00c1de; border: none; outline: none; border-radius: 4px; cursor: pointer">
+                </td>
+            </tr>
+            <tr>
+                <td>计算机科学与技术学院物联网专业</td>
+                <td>65</td>
+                <td><input type="button" value="确定订购"
+                           style="background-color: #00c1de; border: none; outline: none; border-radius: 4px; cursor: pointer">
+                </td>
+            </tr>
+            <tr>
+                <td>信息管理学院信息电子专业</td>
+                <td>24</td>
+                <td><input type="button" value="确定订购"
+                           style="background-color: #00c1de; border: none; outline: none; border-radius: 4px; cursor: pointer">
+                </td>
+            </tr>
+            <tr>
+                <td>石油工程学院石油专业</td>
+                <td>52</td>
+                <td><input type="button" value="确定订购"
+                           style="background-color: #00c1de; border: none; outline: none; border-radius: 4px; cursor: pointer">
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script type="text/javascript" src="../js/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+    $('input').click(function () {
+        window.open('order_success.html');
+    })
+</script>
+</body>
+</html>
