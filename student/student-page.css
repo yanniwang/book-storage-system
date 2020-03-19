@@ -1,0 +1,87 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+}
+
+div, h1, h2, h3, h4, h5, h6, ul, ol, dl, li, dt, dd, p, blockquote,
+pre, form, fieldset, table, th, td {
+    border: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.page-container {
+    width: 100%;
+    height: 100%;
+    background-color: #F5F5F6;
+    position: absolute;
+}
+
+.page-container h2 {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: dodgerblue;
+}
+
+.admin-table {
+    height: 30rem;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2%;
+    background-color: white;
+    overflow: auto;
+}
+
+.admin-tb {
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+    margin-top: 1.6%;
+    border: 0.05rem solid grey;
+    overflow: auto;
+}
+
+.admin-tb tr th, td {
+    text-align: center;
+    border: 0.05rem solid grey;
+}
+
+.check_btn {
+    width: 3.5rem;
+    height: 1.4rem;
+    line-height: 1.4rem;
+    background-color: #00c1de;
+    outline: none;
+    border-radius: 0.4rem;
+    border: 0;
+    cursor: pointer;
+    margin-left: 25%;
+}
+
+.operate_btn input:nth-child(1) {
+    background-color: chartreuse;
+    outline: none;
+    border-radius: 0.4rem;
+    border: 0;
+    cursor: pointer;
+}
+
+.operate_btn input:nth-child(2) {
+    background-color: orange;
+    outline: none;
+    border-radius: 0.4rem;
+    border: 0;
+    cursor: pointer;
+}
+
+.operate_btn input:nth-child(3) {
+    background-color: deeppink;
+    outline: none;
+    border-radius: 0.4rem;
+    border: 0;
+    cursor: pointer;
+}
